@@ -113,9 +113,10 @@ public class MyModel implements Model
 	/* returns solution of a maze by name (if exists)*/
 	public Solution getSolutionForMaze(String name) throws MazeDoesntExistsException
 	{
-		if(mazeAndSolution.containsKey(name))
+		if(mazeNameToMaze3d.containsKey(name))
 		{
-			return mazeAndSolution.get(name);
+			Maze3d maze=mazeNameToMaze3d.get(name);
+			return mazeAndSolution.get(maze);
 		}
 		else
 			throw new MazeDoesntExistsException();
